@@ -14,12 +14,17 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "categories")
-public class Category {
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID category_id;
+    private UUID user_id;
 
-    private String category_name;
-    private String description;
+    private String user_name;
+
+    @Column(unique = true)
+    private String email;
+
+    private String password;
+    private String role;
 }
